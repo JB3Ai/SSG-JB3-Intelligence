@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SSG Intelligence | JB³Ai × OS³</title>
   <meta name="description" content="SSG Security Operations Intelligence Hub — VoiceGrid, ViewGrid Sentinel, Falagalor NLP — JB³Ai / OS³">
+  <link rel="icon" href="assets/img/shieldai-badge.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,10 +24,9 @@
     };
   </script>
   <style>
-    body { font-family: 'Space Grotesk', sans-serif; background: #09090b; color: #fafafa; }
+    body { font-family: 'Space Grotesk', sans-serif !important; background: #09090b; color: #fafafa; }
     .font-mono { font-family: 'JetBrains Mono', monospace !important; }
 
-    /* Subtle grid background */
     .grid-bg {
       background-image:
         linear-gradient(rgba(6,182,212,0.03) 1px, transparent 1px),
@@ -34,11 +34,8 @@
       background-size: 60px 60px;
     }
 
-    /* Scan line animation */
     .scan-line {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
+      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 50; pointer-events: none;
       background: linear-gradient(90deg, transparent, rgba(6,182,212,0.4), transparent);
       animation: scan 4s linear infinite;
     }
@@ -49,10 +46,8 @@
       100% { top: 100%; opacity: 0; }
     }
 
-    /* Pulse dot */
     .pulse-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
+      width: 8px; height: 8px; border-radius: 50%;
       animation: pulse 2s ease-in-out infinite;
     }
     @keyframes pulse {
@@ -60,7 +55,6 @@
       50% { opacity: 0.7; box-shadow: 0 0 0 6px transparent; }
     }
 
-    /* Card hover */
     .card-hover {
       transition: all 0.3s ease;
       border: 1px solid #27272a;
@@ -71,23 +65,62 @@
       transform: translateY(-2px);
     }
 
-    /* Gradient text */
     .gradient-text {
       background: linear-gradient(135deg, #06b6d4, #10b981);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
+    .hero-img {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid #27272a;
+    }
+    .hero-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(9,9,11,0.3) 0%, rgba(9,9,11,0.8) 100%);
+      pointer-events: none;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #27272a;
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+    }
+    .card-hover:hover .card-img {
+      opacity: 1;
+    }
+
+    .demo-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #27272a;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover .demo-card-img {
+      opacity: 1;
+      border-color: #3f3f46;
+    }
   </style>
 </head>
 <body class="min-h-screen grid-bg">
-  <div class="scan-line pointer-events-none" style="z-index:50;"></div>
+  <div class="scan-line"></div>
 
   <!-- STATUS BAR -->
   <header class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <!-- Icon -->
         <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
           <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
           <div class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-zinc-950 animate-pulse"></div>
@@ -117,21 +150,26 @@
   <main class="max-w-6xl mx-auto px-6 py-12">
 
     <!-- HERO -->
-    <section class="text-center mb-16">
-      <p class="text-[10px] text-cyan-500 tracking-[0.3em] uppercase font-mono mb-4">Classified Intelligence Platform</p>
-      <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-        <span class="gradient-text">OS³ Sentinel</span> Intelligence
-      </h2>
-      <p class="text-zinc-400 max-w-2xl mx-auto text-sm leading-relaxed">
-        Integrated security intelligence for SSG operations across the Witwatersrand Basin.
-        Satellite surveillance, acoustic monitoring, and NLP-driven threat analysis.
-      </p>
-      <div class="flex items-center justify-center gap-6 mt-6 text-[10px] text-zinc-500 font-mono tracking-wider uppercase">
-        <span>Client: <span class="text-zinc-300">SSG</span></span>
-        <span class="text-zinc-700">|</span>
-        <span>Region: <span class="text-zinc-300">Witwatersrand Basin</span></span>
-        <span class="text-zinc-700">|</span>
-        <span>Classification: <span class="text-amber-400">Restricted</span></span>
+    <section class="mb-16">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-[10px] text-cyan-500 tracking-[0.3em] uppercase font-mono mb-4">Classified Intelligence Platform</p>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            <span class="gradient-text">OS³ Sentinel</span><br>Intelligence
+          </h2>
+          <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+            Integrated security intelligence for SSG operations across the Witwatersrand Basin.
+            Satellite surveillance, acoustic monitoring, and NLP-driven threat analysis.
+          </p>
+          <div class="flex flex-wrap gap-4 text-[10px] text-zinc-500 font-mono tracking-wider uppercase">
+            <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded-lg">Client: <span class="text-zinc-300">SSG</span></span>
+            <span class="px-3 py-1.5 bg-zinc-900 border border-zinc-800 rounded-lg">Region: <span class="text-zinc-300">Witwatersrand</span></span>
+            <span class="px-3 py-1.5 bg-zinc-900 border border-amber-500/20 rounded-lg">Classification: <span class="text-amber-400">Restricted</span></span>
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="assets/img/jb3ai-mining-frontier.png" alt="JB³Ai — Securing the Mining Frontier" class="w-full rounded-xl">
+        </div>
       </div>
     </section>
 
@@ -143,21 +181,22 @@
         </div>
         <div>
           <h3 class="text-sm font-bold text-white tracking-wider uppercase">Intelligence Library</h3>
-          <p class="text-[10px] text-zinc-500 tracking-wider uppercase font-mono mt-0.5">Technical Documentation & Module Specifications</p>
+          <p class="text-[10px] text-zinc-500 tracking-wider uppercase font-mono mt-0.5">Technical Documentation &amp; Module Specifications</p>
         </div>
       </div>
 
       <div class="grid md:grid-cols-3 gap-4">
         <!-- VoiceGrid Brochure -->
-        <a href="docs/brochures/voicegrid-os3grid.pdf" class="card-hover block rounded-xl bg-zinc-950 p-6 group">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+        <a href="docs/brochures/voicegrid-os3grid.pdf" target="_blank" class="card-hover block rounded-xl bg-zinc-950 p-5 group">
+          <img src="assets/img/voicegrid-concepts.png" alt="VoiceGrid OS³ Concepts" class="card-img mb-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
               <i data-lucide="audio-waveform" class="w-5 h-5 text-cyan-400"></i>
             </div>
             <span class="text-[9px] bg-red-500/15 text-red-400 border border-red-500/20 px-2 py-0.5 rounded font-mono font-bold tracking-wider">PDF</span>
           </div>
           <h4 class="text-sm font-bold text-white mb-1.5">VoiceGrid OS³Grid</h4>
-          <p class="text-xs text-zinc-500 leading-relaxed">Tactical acoustic monitoring and grid-based voice intelligence system. Real-time audio surveillance mesh.</p>
+          <p class="text-xs text-zinc-500 leading-relaxed">Tactical acoustic monitoring and grid-based voice intelligence. Real-time audio surveillance mesh across deployed sensor nodes.</p>
           <div class="flex items-center gap-1.5 mt-4 text-[10px] text-cyan-500 font-mono tracking-wider">
             <i data-lucide="download" class="w-3 h-3"></i>
             <span>Download Brochure</span>
@@ -165,15 +204,16 @@
         </a>
 
         <!-- Falagalor Brochure -->
-        <a href="docs/brochures/falagalor-language-module.pdf" class="card-hover block rounded-xl bg-zinc-950 p-6 group">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+        <a href="docs/brochures/falagalor-language-module.pdf" target="_blank" class="card-hover block rounded-xl bg-zinc-950 p-5 group">
+          <img src="assets/img/ssg-operations-tablet.png" alt="Falagalor NLP Module" class="card-img mb-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
               <i data-lucide="languages" class="w-5 h-5 text-emerald-400"></i>
             </div>
             <span class="text-[9px] bg-red-500/15 text-red-400 border border-red-500/20 px-2 py-0.5 rounded font-mono font-bold tracking-wider">PDF</span>
           </div>
           <h4 class="text-sm font-bold text-white mb-1.5">Falagalor Language Module</h4>
-          <p class="text-xs text-zinc-500 leading-relaxed">Proprietary NLP framework for localised dialect processing. Multi-language threat detection engine.</p>
+          <p class="text-xs text-zinc-500 leading-relaxed">Proprietary NLP framework for localised dialect processing. Multi-language threat detection and translation engine.</p>
           <div class="flex items-center gap-1.5 mt-4 text-[10px] text-emerald-500 font-mono tracking-wider">
             <i data-lucide="download" class="w-3 h-3"></i>
             <span>Download Brochure</span>
@@ -181,9 +221,10 @@
         </a>
 
         <!-- ViewGrid Sentinel Brochure -->
-        <a href="docs/brochures/viewgrid-sentinel-os3.pdf" class="card-hover block rounded-xl bg-zinc-950 p-6 group">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
+        <a href="docs/brochures/viewgrid-sentinel-os3.pdf" target="_blank" class="card-hover block rounded-xl bg-zinc-950 p-5 group">
+          <img src="assets/img/os3-satellite-mining.png" alt="ViewGrid Sentinel OS³" class="card-img mb-4">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
               <i data-lucide="satellite" class="w-5 h-5 text-amber-400"></i>
             </div>
             <span class="text-[9px] bg-red-500/15 text-red-400 border border-red-500/20 px-2 py-0.5 rounded font-mono font-bold tracking-wider">PDF</span>
@@ -210,16 +251,17 @@
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-4">
+      <div class="grid md:grid-cols-2 gap-5">
         <!-- VoiceGrid Live -->
         <a href="https://www.jb3ai.com/os3grid" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
-          <div class="absolute top-4 right-4 flex items-center gap-2">
+          <div class="absolute top-5 right-5 flex items-center gap-2 z-10">
             <div class="pulse-dot bg-emerald-400" style="color:rgba(52,211,153,0.4)"></div>
             <span class="text-[9px] text-emerald-400 font-mono tracking-wider uppercase">Active Node</span>
           </div>
-          <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 border border-cyan-500/20 flex items-center justify-center group-hover:border-cyan-400/40 transition-colors">
-              <i data-lucide="audio-waveform" class="w-7 h-7 text-cyan-400"></i>
+          <img src="assets/img/voicegrid-dashboard.png" alt="VoiceGrid Live Dashboard" class="demo-card-img mb-5">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/10 border border-cyan-500/20 flex items-center justify-center group-hover:border-cyan-400/40 transition-colors">
+              <i data-lucide="audio-waveform" class="w-6 h-6 text-cyan-400"></i>
             </div>
             <div>
               <h4 class="text-base font-bold text-white">VoiceGrid</h4>
@@ -230,7 +272,7 @@
             Live acoustic monitoring grid. Real-time voice intelligence and threat detection across deployed sensor nodes.
           </p>
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1.5 text-[10px] text-cyan-400 font-mono font-bold tracking-wider">
+            <div class="flex items-center gap-1.5 text-[10px] text-cyan-400 font-mono font-bold tracking-wider group-hover:text-cyan-300 transition-colors">
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               <span>LAUNCH VOICEGRID</span>
             </div>
@@ -240,13 +282,14 @@
 
         <!-- ViewGrid Sentinel Live -->
         <a href="https://www.jb3ai.com/ssg" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
-          <div class="absolute top-4 right-4 flex items-center gap-2">
+          <div class="absolute top-5 right-5 flex items-center gap-2 z-10">
             <div class="pulse-dot bg-amber-400" style="color:rgba(251,191,36,0.4)"></div>
             <span class="text-[9px] text-amber-400 font-mono tracking-wider uppercase">Phase 1 MVP</span>
           </div>
-          <div class="flex items-center gap-4 mb-5">
-            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-500/20 to-emerald-600/10 border border-amber-500/20 flex items-center justify-center group-hover:border-amber-400/40 transition-colors">
-              <i data-lucide="satellite" class="w-7 h-7 text-amber-400"></i>
+          <img src="assets/img/os3-satellite-mining.png" alt="ViewGrid Sentinel" class="demo-card-img mb-5">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-emerald-600/10 border border-amber-500/20 flex items-center justify-center group-hover:border-amber-400/40 transition-colors">
+              <i data-lucide="satellite" class="w-6 h-6 text-amber-400"></i>
             </div>
             <div>
               <h4 class="text-base font-bold text-white">ViewGrid — Sentinel</h4>
@@ -257,7 +300,7 @@
             Satellite-based OSINT platform. Risk scoring, spectral analysis, and abandoned mine monitoring across the Gold Belt.
           </p>
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-1.5 text-[10px] text-amber-400 font-mono font-bold tracking-wider">
+            <div class="flex items-center gap-1.5 text-[10px] text-amber-400 font-mono font-bold tracking-wider group-hover:text-amber-300 transition-colors">
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               <span>LAUNCH VIEWGRID</span>
             </div>
@@ -267,37 +310,39 @@
       </div>
     </section>
 
-    <!-- DIVIDER -->
+    <!-- SECURITY BADGE + FOOTER -->
     <div class="border-t border-zinc-800 mb-12"></div>
 
-    <!-- FOOTER -->
-    <footer class="text-center pb-12">
-      <div class="flex items-center justify-center gap-3 mb-3">
-        <span class="text-sm font-semibold tracking-wide text-cyan-400 font-mono">JB<sup class="text-[9px] font-bold" style="vertical-align:super;line-height:0">3</sup>Ai</span>
-        <span class="text-zinc-700">&times;</span>
-        <span class="text-sm font-semibold tracking-wide text-emerald-400 font-mono">OS<sup class="text-[9px] font-bold" style="vertical-align:super;line-height:0">3</sup></span>
+    <footer class="pb-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="flex items-center gap-5">
+          <img src="assets/img/shieldai-badge.png" alt="ShieldAi JB³AES-256" class="w-16 h-16 rounded-lg opacity-80">
+          <div>
+            <div class="flex items-center gap-3 mb-1">
+              <span class="text-sm font-semibold tracking-wide text-cyan-400 font-mono">JB<sup class="text-[9px] font-bold" style="vertical-align:super;line-height:0">3</sup>Ai</span>
+              <span class="text-zinc-700">&times;</span>
+              <span class="text-sm font-semibold tracking-wide text-emerald-400 font-mono">OS<sup class="text-[9px] font-bold" style="vertical-align:super;line-height:0">3</sup></span>
+            </div>
+            <p class="text-[10px] text-zinc-600 tracking-widest uppercase font-mono">
+              SSG Security Operations &mdash; Witwatersrand Basin
+            </p>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-[10px] text-zinc-600 font-mono mb-1">AES-256 Encrypted &bull; End-to-End Secure</p>
+          <p class="text-[10px] text-zinc-700 font-mono">&copy; 2026 JB³Ai. All rights reserved.</p>
+        </div>
       </div>
-      <p class="text-[10px] text-zinc-600 tracking-widest uppercase font-mono">
-        SSG Security Operations &mdash; Witwatersrand Basin
-      </p>
-      <p class="text-[10px] text-zinc-700 mt-2 font-mono">&copy; 2026 JB³Ai. All rights reserved.</p>
     </footer>
 
   </main>
 
   <script>
-    // Initialize Lucide icons
     lucide.createIcons();
-
-    // Live timestamp
     function updateTime() {
       const now = new Date();
       document.getElementById('timestamp').textContent =
-        now.toLocaleString('en-ZA', {
-          day: '2-digit', month: 'short', year: 'numeric',
-          hour: '2-digit', minute: '2-digit', second: '2-digit',
-          hour12: false
-        });
+        now.toLocaleString('en-ZA', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false });
     }
     updateTime();
     setInterval(updateTime, 1000);
