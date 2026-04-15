@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           port: ${{ secrets.FTP_PORT || 21 }}
           local-dir: ./
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          server-dir: ./public_html/ssg/
           exclude: |
             **/.git*
             **/.git*/**
