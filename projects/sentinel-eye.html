@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentinel Eye | SSG Intelligence</title>
+  <meta name="description" content="Sentinel Eye project profile for SSG-JB3 Intelligence.">
+  <link rel="icon" href="../assets/img/shieldai-badge.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    body { font-family: 'Space Grotesk', sans-serif; background:#09090b; color:#fafafa; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .grid-bg { background-image: linear-gradient(rgba(251,191,36,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(6,182,212,0.025) 1px, transparent 1px); background-size: 56px 56px; }
+  </style>
+</head>
+<body class="min-h-screen grid-bg">
+  <main class="max-w-5xl mx-auto px-6 py-10">
+    <a href="../index.html" class="inline-flex items-center gap-2 text-xs text-amber-400 font-mono tracking-wider uppercase mb-10">
+      <i data-lucide="arrow-left" class="w-4 h-4"></i>
+      SSG Intelligence
+    </a>
+
+    <section class="grid md:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+      <div>
+        <p class="text-[10px] text-amber-500 tracking-[0.3em] uppercase font-mono mb-4">ViewGrid Watch Layer</p>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-5">Sentinel Eye</h1>
+        <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+          A Next.js tactical map for illegal mining watch operations, alert triage, abandoned mine risk scoring, Sentinel Hub overlays, and Telegram dispatch.
+        </p>
+      </div>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
+        <dl class="grid gap-4 text-xs">
+          <div>
+            <dt class="text-zinc-600 font-mono uppercase tracking-wider">Workspace Source</dt>
+            <dd class="text-zinc-300 mt-1 font-mono">Claude Working Folder/sentinel-eye</dd>
+          </div>
+          <div>
+            <dt class="text-zinc-600 font-mono uppercase tracking-wider">Package</dt>
+            <dd class="text-zinc-300 mt-1 font-mono">sentinel-eye</dd>
+          </div>
+          <div>
+            <dt class="text-zinc-600 font-mono uppercase tracking-wider">Runtime</dt>
+            <dd class="text-zinc-300 mt-1">Next.js, React, Mapbox GL, Sentinel Hub integration, Telegram alert route</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-4 mt-10">
+      <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
+        <i data-lucide="map" class="w-5 h-5 text-amber-400 mb-4"></i>
+        <h2 class="text-sm font-bold uppercase tracking-wider mb-2">Tactical Map</h2>
+        <p class="text-xs text-zinc-500 leading-relaxed">Mapbox layers, satellite controls, and operational area context for watch teams.</p>
+      </div>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
+        <i data-lucide="activity" class="w-5 h-5 text-cyan-400 mb-4"></i>
+        <h2 class="text-sm font-bold uppercase tracking-wider mb-2">Risk Scoring</h2>
+        <p class="text-xs text-zinc-500 leading-relaxed">Abandoned mine datasets and alert state are scored for triage and field prioritization.</p>
+      </div>
+      <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
+        <i data-lucide="send" class="w-5 h-5 text-emerald-400 mb-4"></i>
+        <h2 class="text-sm font-bold uppercase tracking-wider mb-2">Dispatch</h2>
+        <p class="text-xs text-zinc-500 leading-relaxed">Telegram dispatch route and alert detail panels for rapid response coordination.</p>
+      </div>
+    </section>
+  </main>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
