@@ -34,18 +34,6 @@
       background-size: 60px 60px;
     }
 
-    .scan-line {
-      position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 50; pointer-events: none;
-      background: linear-gradient(90deg, transparent, rgba(6,182,212,0.4), transparent);
-      animation: scan 4s linear infinite;
-    }
-    @keyframes scan {
-      0% { top: 0; opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { top: 100%; opacity: 0; }
-    }
-
     .pulse-dot {
       width: 8px; height: 8px; border-radius: 50%;
       animation: pulse 2s ease-in-out infinite;
@@ -115,8 +103,6 @@
   </style>
 </head>
 <body class="min-h-screen grid-bg">
-  <div class="scan-line"></div>
-
   <!-- STATUS BAR -->
   <header class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-sm sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -252,7 +238,7 @@
       </div>
 
       <div class="grid md:grid-cols-2 gap-5">
-        <a href="projects/mzanzi-core.html" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
+        <a href="https://www.jb3ai.com/os3grid" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
           <div class="absolute top-5 right-5 flex items-center gap-2 z-10">
             <div class="pulse-dot bg-cyan-400" style="color:rgba(34,211,238,0.4)"></div>
             <span class="text-[9px] text-cyan-400 font-mono tracking-wider uppercase">VoiceGrid Core</span>
@@ -278,7 +264,7 @@
           </div>
         </a>
 
-        <a href="projects/sentinel-eye.html" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
+        <a href="https://www.jb3ai.com/ssg" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
           <div class="absolute top-5 right-5 flex items-center gap-2 z-10">
             <div class="pulse-dot bg-amber-400" style="color:rgba(251,191,36,0.4)"></div>
             <span class="text-[9px] text-amber-400 font-mono tracking-wider uppercase">Satellite OSINT</span>
@@ -320,7 +306,7 @@
 
       <div class="grid md:grid-cols-2 gap-5">
         <!-- VoiceGrid Live -->
-        <a href="projects/mzanzi-core.html" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
+        <a href="https://www.jb3ai.com/os3grid" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
           <div class="absolute top-5 right-5 flex items-center gap-2 z-10">
             <div class="pulse-dot bg-emerald-400" style="color:rgba(52,211,153,0.4)"></div>
             <span class="text-[9px] text-emerald-400 font-mono tracking-wider uppercase">Active Node</span>
@@ -343,12 +329,12 @@
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               <span>LAUNCH VOICEGRID</span>
             </div>
-            <span class="text-[9px] text-zinc-600 font-mono">jb3ai.com/ssg/projects/mzanzi-core.html</span>
+            <span class="text-[9px] text-zinc-600 font-mono">jb3ai.com/os3grid</span>
           </div>
         </a>
 
         <!-- ViewGrid Sentinel Live -->
-        <a href="projects/sentinel-eye.html" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
+        <a href="https://www.jb3ai.com/ssg" class="card-hover block rounded-xl bg-zinc-950 p-6 group relative overflow-hidden">
           <div class="absolute top-5 right-5 flex items-center gap-2 z-10">
             <div class="pulse-dot bg-amber-400" style="color:rgba(251,191,36,0.4)"></div>
             <span class="text-[9px] text-amber-400 font-mono tracking-wider uppercase">Phase 1 MVP</span>
@@ -371,7 +357,7 @@
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
               <span>LAUNCH VIEWGRID</span>
             </div>
-            <span class="text-[9px] text-zinc-600 font-mono">jb3ai.com/ssg/projects/sentinel-eye.html</span>
+            <span class="text-[9px] text-zinc-600 font-mono">jb3ai.com/ssg</span>
           </div>
         </a>
       </div>
