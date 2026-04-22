@@ -1,0 +1,7 @@
+{
+  "name": "JB3Ai-Neural-Hub",
+  "description": "Advanced multi-lingual outbound signal processing and intelligence platform.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

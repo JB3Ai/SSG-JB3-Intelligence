@@ -1,0 +1,31 @@
+node_modules
+dist/
+
+# Local environment files
+.env
+.env.*
+services/.env.local
+
+# Google service account key (sensitive credentials — POPIA compliance)
+google-key.json
+os3grid-neural-hub-bfeb425b03a1.json
+*.service-account.json
+*-service-account.json
+*-credentials.json
+*.credentials.json
+
+# Generated archives
+*.zip
+
+# Local runtime logs
+*.out.log
+*.err.log
+dev.out.log
+dev.err.log
+voicegrid.backend.out.log
+voicegrid.backend.err.log
+voicegrid.frontend.out.log
+voicegrid.frontend.err.log
+
+# Local nested copy (not part of this repo release)
+OS3_VoiceGrid_Main/

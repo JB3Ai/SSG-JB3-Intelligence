@@ -12,13 +12,13 @@ Landing page for the SSG Intelligence platform at `www.jb3ai.com/ssg`.
 
 ## Operational Projects
 
-This repository is the SSG intelligence web front door for two working systems:
+This repository is now both the SSG intelligence web front door and a source mirror host for two working systems:
 
 - **MZANZI_CORE** — localized mining, security, and community-liaison VoiceGrid system.
-  - Workspace source: `OS3_VOICE_GRID/OS3_VoiceGrid_MZANZI_CORE`
-  - GitHub: `JB3Ai/OS3_VoiceGrid_MZANZI_CORE.git`
+  - Mirror source path in this repo: `OS3_VoiceGrid_MZANZI_SSG`
+  - Upstream GitHub: `JB3Ai/OS3_VoiceGrid_MZANZI_CORE.git`
 - **Sentinel Eye** — Next.js ViewGrid watch layer for satellite OSINT, alerts, and risk scoring.
-  - Workspace source: `Claude Working Folder/sentinel-eye`
+  - Source path in this repo: `sentinel-eye`
 
 ## Structure
 
@@ -26,6 +26,8 @@ This repository is the SSG intelligence web front door for two working systems:
 index.html              # Landing page
 docs/brochures/         # PDF brochures
 projects/               # HTML project profiles for MZANZI_CORE and Sentinel Eye
+OS3_VoiceGrid_MZANZI_SSG/ # OS3 VoiceGrid source mirror used for SSG
+sentinel-eye/             # Sentinel Eye source now hosted inside this repo
 ```
 
 ## Deployment
